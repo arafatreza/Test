@@ -1,0 +1,53 @@
+﻿@model PharmacyEShop.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+<form asp-action="Create" method="post">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            @Html.ActionLink("Index", "Index", "Category", new { }, new { @*@target = "_blank",*@@class = "btn btn-success pull-right" })
+            <span style="font-size: 25px">Create</span>
+            <br>
+        </div>
+        <br>
+        <div class="panel-body">
+            <div class="form-group">
+                <label asp-for="Code">Code</label>
+                <input type="text" asp-for="Code" name="Code" class="form-control" placeholder="Please provide Code" />
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">Name</label>
+                <input type="text" asp-for="Name" name="Name" class="form-control" placeholder="Please provide Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <br>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type">Type</label>
+                <input type="text" asp-for="Type" name="Type" class="form-control" placeholder="Please provide Type" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+                <br>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image"></label>
+                <input type="file" asp-for="Image" name="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+                <br>
+            </div>
+            <div class="form-group align-content-center">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+        <div class="panel-footer">
+            © 2020 Optimum Solution and Services Ltd.
+        </div>
+
+    </div>
+</form>
+@*@section MyScript
+{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@
+
+
